@@ -1,0 +1,83 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.5.1/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 120,
+    "lineEnding": "lf",
+    "ignore": []
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    },
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "ignore": [],
+    "rules": {
+      "recommended": true,
+      "correctness": {
+        "noUnusedVariables": "error",
+        "useExhaustiveDependencies": "off"
+      },
+      "style": {
+        "noInferrableTypes": "off",
+        "useEnumInitializers": "off"
+      },
+      "suspicious": {
+        "noConsoleLog": "error"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": {
+          "level": "error",
+          "options": {
+            "maxAllowedComplexity": 45
+          }
+        },
+        "noVoid": "error",
+        "noUselessSwitchCase": "off"
+      },
+      "performance": {
+        "noAccumulatingSpread": "off"
+      },
+      "nursery": {
+        "noNodejsModules": "error"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "include": ["test-utils/**/*", "*.spec.ts", "*.spec.tsx"],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noDelete": "off"
+          },
+          "suspicious": {
+            "noExplicitAny": "off"
+          },
+          "nursery": {
+            "noNodejsModules": "off"
+          },
+          "style": {
+            "noNonNullAssertion": "off",
+            "useFragmentSyntax": "error",
+            "useNodejsImportProtocol": "error"
+          }
+        }
+      }
+    }
+  ],
+  "files": {
+    "ignore": ["test/assets/firebase-configs/FirebaseConfigBroken.json"]
+  }
+}

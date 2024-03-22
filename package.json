@@ -1,0 +1,12 @@
+{
+  "name": "biome-issue-2080-minimal-reproduction",
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm install",
+    "biome:wrong-result": "biome check ./src ./test-utils --apply",
+    "biome:correct-result": "biome check ./src --apply"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.6.2"
+  }
+}
