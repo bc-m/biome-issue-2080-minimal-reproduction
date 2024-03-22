@@ -5,9 +5,11 @@ export const testFn = () => {
 
   return ({ children }: any): ReactElement => (
     <div>
-      {foo
-        ? children
-        : <span>Long Text Here Long Text Here Long Text Here Long Text Here Long Text Here Long Text Here</span>}
+      {foo ? (
+        children
+      ) : (
+        <span>Long Text Here Long Text Here Long Text Here Long Text Here Long Text Here Long Text Here</span>
+      )}
     </div>
   );
 };
